@@ -1,0 +1,12 @@
+copy: 
+UnityEngine.CoreModule.dll
+UnityEngine.dll
+UnityEngine.UI.dll
+Assembly-CSharp.dll
+Assembly-CSharp-firstpass.dll
+RDTools.dll
+DOTween.dll
+from Rhythm Doctor_Data\Managed
+com.rhythmdr.bpe5randommodifications.dll
+com.rhythmdr.randommodifications.dll
+from my modszings

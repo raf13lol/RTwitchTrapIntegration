@@ -1,0 +1,11 @@
+bin/*
+obj/*
+
+lib/*.dll
+
+.vscode/*
+.idea/*
+.vs/*
+
+com.rhythmdr.rtwitchtrapintegration.dll
+com.rhythmdr.bpe5rtwitchtrapintegration.dll

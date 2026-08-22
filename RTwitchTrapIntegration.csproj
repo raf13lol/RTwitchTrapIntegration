@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>com.rhythmdr.rtwitchtrapintegration</AssemblyName>
+        <Product>RTwitchTrapIntegration</Product>
+        <Version>0.0.1</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+        <RootNamespace>RTwitchTrapIntegration</RootNamespace>
+        <NoWarn>MSB3277</NoWarn>
+
+        <DefineConstants Condition="$(BPE5) == '1'">$(DefineConstants);BPE5</DefineConstants>
+        <TargetName Condition="$(BPE5) == '1'">com.rhythmdr.bpe5rtwitchtrapintegration</TargetName>
+        <!-- <DefineConstants>$(DefineConstants);BPE5</DefineConstants> -->
+        <!-- <TargetName>com.rhythmdr.bpe5rtwitchtrapintegration</TargetName> -->
+
+    </PropertyGroup>
+
+    <ItemGroup>
+
+        <PackageReference Condition="$(BPE5) != '1'" Include="BepInEx.Unity.Mono"
+            Version="6.0.0-be.*" IncludeAssets="compile" />
+        <PackageReference Condition="$(BPE5) == '1'" Include="BepInEx.Core" Version="5.*" />
+        <!-- <PackageReference Include="BepInEx.Core" Version="5.*" /> -->
+
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.*" />
+        <PackageReference Include="System.Collections.Immutable" Version="9.*" />
+        <PackageReference Include="UnityEngine.Modules" IncludeAssets="compile" Version="6000.3.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="UnityEngine.CoreModule" IncludeAssets="compile">
+            <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine" IncludeAssets="compile">
+            <HintPath>lib\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI" IncludeAssets="compile">
+            <HintPath>lib\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp" IncludeAssets="compile">
+            <HintPath>lib\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-firstpass" IncludeAssets="compile">
+            <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="RDTools" IncludeAssets="compile">
+            <HintPath>lib\RDTools.dll</HintPath>
+        </Reference>
+        <Reference Include="DOTween" IncludeAssets="compile">
+            <HintPath>lib\DOTween.dll</HintPath>
+        </Reference>
+        <Reference Condition="$(BPE5) != '1'" Include="RDModifications" IncludeAssets="compile">
+            <HintPath>lib\com.rhythmdr.randommodifications.dll</HintPath>
+        </Reference>
+        <Reference Condition="$(BPE5) == '1'"  Include="RDModifications" IncludeAssets="compile">
+            <HintPath>lib\com.rhythmdr.bpe5randommodifications.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.*"
+            PrivateAssets="all" />
+    </ItemGroup>
+</Project>

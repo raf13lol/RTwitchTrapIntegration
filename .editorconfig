@@ -1,0 +1,19 @@
+[*.cs]
+
+# BepInEx002: Classes with BepInPlugin attribute must inherit from BaseUnityPlugin
+dotnet_diagnostic.BepInEx002.severity = silent
+
+# IDE0160: Convert to block scoped namespace
+csharp_style_namespace_declarations = file_scoped
+
+# IDE0130: Namespace does not match folder structure
+dotnet_diagnostic.IDE0130.severity = silent
+
+# IDE1006: Naming Styles
+dotnet_diagnostic.IDE1006.severity = silent
+
+# CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+dotnet_diagnostic.CS8632.severity = silent
+
+indent_style = spaces
+indent_size = 4
