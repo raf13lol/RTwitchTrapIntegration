@@ -21,7 +21,7 @@ public class BlindfoldedTrap
         {
             try
             {
-                scnGame.instance.rows.Do((r) => r?.ent?.Hide(true, false));
+                scnGame.instance.rows.Do((r) => r?.ent?.Hide(r?.ent?.character.visible ?? false, false));
                 scnGame.instance.currentLevel.sprites.Do((r) =>
                 {
                     CustomSprite customSprite = r.Value;
