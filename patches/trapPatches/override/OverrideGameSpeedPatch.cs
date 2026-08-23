@@ -2,6 +2,7 @@
 
 using DG.Tweening;
 using HarmonyLib;
+using RDLevelEditor;
 using UnityEngine;
 
 namespace RTwitchTrapIntegration;
@@ -16,9 +17,9 @@ public class OverrideGameSpeedPatch : Patch
     {
         if (!Enabled || __instance.paused)
             return;
-        RDTime.speed = CurrentSpeed;
+        // RDTime.speed = CurrentSpeed;
         Time.timeScale = CurrentSpeed;
-        DOTween.timeScale = CurrentSpeed;
+        // DOTween.timeScale = CurrentSpeed;
         __instance.visualSpeed = CurrentSpeed;
     }
 }
