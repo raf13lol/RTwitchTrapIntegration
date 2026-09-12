@@ -46,7 +46,7 @@ public class EventSubClient : TwitchObject
 
         if (timeSinceLastMessage > keepAliveTime)
         {
-            Patch.Log.LogMessage("keepalive timeout FUCK");
+            Patch.Log.LogMessage("Keepalive timeout");
             _ = TimeoutReconnect();
         }
         timeSinceLastMessage += deltaTime;
@@ -72,7 +72,6 @@ public class EventSubClient : TwitchObject
 
     private void HandleMessage(EventSubMessage message)
     {
-        Patch.Log.LogMessage($"received {message.metadata.MessageType} from twitch - {timeSinceLastMessage}");
         timeSinceLastMessage = 0f;
         switch (message.metadata.MessageType)
         {

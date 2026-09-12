@@ -36,7 +36,10 @@ public class ScrambleCharactersTrap
                 return ret;
         }
 
-        return new(Character.Samurai);
+        return new(character)
+        {
+            CustomCharacterName = customCharacterName  
+        };
     }
 
     public static void ScrambleCharacters()

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace RTwitchTrapIntegration;
 
-[Trap("RandomVFXPreset", "Runs a Set VFX Preset with a random vfx preset.")]
+// [Trap("RandomVFXPreset", "Runs a Set VFX Preset with a random vfx preset.")]
 public class RandomVFXPresetTrap
 {
     public static List<RDThemeFX> ValidVFXPresets = [];

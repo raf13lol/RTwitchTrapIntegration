@@ -49,7 +49,6 @@ public class EventSubSocket() : IDisposable
             {
                 if (WebSocket.State != WebSocketState.Open)
                     throw new Exception("Dummy error to dispose this websocket");
-                Patch.Log.LogMessage($"websock state = {WebSocket.State}");
                 EventSubMessage message = EventSubMessageParser.Parse(receiveBuffer, await WebSocket.ReceiveAsync(receiveBuffer, token));
                 OnMessageReceived?.Invoke(message);    
             }
@@ -66,7 +65,6 @@ public class EventSubSocket() : IDisposable
 
     public void Dispose()
     {
-        Patch.Log.LogMessage($"websock disposed");
         disposed = true;
 
         CancellationTokenSource.Dispose();

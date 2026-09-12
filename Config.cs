@@ -10,7 +10,7 @@ public class Config
     public static bool RunPatches => Initialised && Enabled.Value;
 
     public static ConfigEntry<bool> Enabled;
-    public static ConfigEntry<KeyCode> AuthedKeyCode;
+    public static ConfigEntry<KeyBind> AuthedKeyCode;
 
     public static ConfigEntry<bool> AutomaticallyUpdateRedemptionStatuses;
     public static ConfigEntry<bool> QueueRedemptionsForNextLevel;
@@ -27,7 +27,7 @@ public class Config
     public static void Init()
     {
         Enabled = config.Bind("", "Enabled", false, "If the Twitch integration should be enabled.");
-        AuthedKeyCode = config.Bind("", "AuthedKeyCode", KeyCode.F2,
+        AuthedKeyCode = config.Bind("", "AuthedKeyCode", KeyBind.F2,
             "Once you have authorised the program through the device code,\n" +
             "the key that should be pressed to indicate to RD to attempt to set up the connection."
         );
@@ -53,14 +53,14 @@ public class Config
             "{user} = The user who redeemed the reward.\n" +
             "{reward_name} = The name of the reward redeemed.\n" +
             "{reward_cost} = The cost of the reward redeemed.\n" +
-            "{trap_name} = The name of the trap trigger.\n"
+            "{trap_name} = The name of the trap trigger."
         );
 
-        StatusSignUserInputText = config.Bind("Settings", "StatusSignText", "{user} redeemed {reward_name} with input of {user_input}!", 
+        StatusSignUserInputText = config.Bind("Settings", "StatusSignUserInputText", "{user} redeemed {reward_name} with input of {user_input}!", 
             "The template text that StatusSignShowRedemptions should show for redemptions that use user input.\n" +
             "Strings that will be replaced by the corresponding information are the same as StatusSignText,\n" + 
             "besides the addition of:\n" +
-            "{user_input} = The user input for the reward redemption.\n"
+            "{user_input} = The user input for the reward redemption."
         );
 
         Initialised = true;

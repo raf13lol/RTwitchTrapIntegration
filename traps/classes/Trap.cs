@@ -32,7 +32,7 @@ public class Trap
 
             if (function.RequiresStateToExist && State == null)
             {
-                Patch.Log.LogMessage($"{Info.Name} did not trigger on this context {runContext} as required state was missing (this is fine and not an error)");
+                //Patch.Log.LogMessage($"{Info.Name} did not trigger on this context {runContext} as required state was missing (this is fine and not an error)");
                 allRan = false;
                 continue;
             }

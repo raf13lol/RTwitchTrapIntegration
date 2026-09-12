@@ -80,8 +80,8 @@ public class Traps
             Trap trap = new(trapInfo, redemption);
 
             Patch.Log.LogMessage($"{trapInfo.Name} has been added to queue");
-            if (Config.StatusSignShowRedemptions.Value && trapInfo.AutomaticallyDisplayRedemption)
-                RedemptionSignPatch.RedemptionsToShow.Add(redemption);
+            if (trapInfo.AutomaticallyDisplayRedemption)
+                redemption.Display();
 
             foreach (TrapFunction func in trapInfo.Functions)
             {

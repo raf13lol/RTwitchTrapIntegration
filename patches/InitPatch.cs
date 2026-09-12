@@ -19,7 +19,7 @@ public class InitPatch : Patch
         TwitchClient twitch = new("6c8dvdxq0uoyvmmmuioh4cw2zx2zmz");
         twitch.Auth.OnDeviceCodeReceived += code =>
         {
-            Log.LogMessage($"device code auth needed; type in {code.user_code} / goto {code.verification_uri}");  
+            Log.LogMessage($"Device code auth needed; type in {code.user_code} / goto {code.verification_uri}");  
         };
         _ = twitch.CreateDeviceAuthorisationRequest();
         Twitch = twitch;

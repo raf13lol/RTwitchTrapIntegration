@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using RDLevelEditor;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace RTwitchTrapIntegration;
 
-[Trap("SayReadyGetSetGo", "Says a Ready Get Set Go cue with a tick denominator of a random power of 2 (exponent has a range of [-2, 2]).")]
+[Trap("SayReadyGetSetGo", "Says a Ready Get Set Go cue with a tick denominator of a random power of 2 (exponent has a range of [-2, 2]).", false)]
 public class SayRDGSGTrap
 {
     public static List<OneshotPhraseToSay> PhraseOrder = [
